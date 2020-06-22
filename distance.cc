@@ -1,11 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <iostream>
 #include <stdlib.h>
 #include <vector>
 #include <algorithm>
-#include <functional>
 #include <Eigen/Core>
 #include <Eigen/Dense>
 
@@ -77,48 +74,3 @@ int main(int argc, char *argv[]){ // ./distance 55.895017 -3.255537 55.893994 -3
 
     return 0;
 }
-/*
-def get_line(line_start_lat, line_start_lng, line_end_lat, line_end_lng):
-
-# """
-#
-# List of coordinates inside a line between the given ones
-#
-# @param line_start_lat: defines the line coordinates (start lat of the line)
-#
-# @param line_start_lng: defines the line coordinates (start lng of the line)
-#
-# @param line_end_lat: defines the line coordinates (end lat of the line)
-#
-# @param line_end_lng: defines the line coordinates (end lng of the line)
-#
-# @return point_list: list of coordinates, each coordinate is a tuple in the form of (lat, lang)
-#
-# """
-
-start_point = np.array([line_start_lat, line_start_lng])
-
-    end_point = np.array([line_end_lat, line_end_lng])
-
-    full_vector = np.subtract(end_point, start_point)
-
-    module = np.linalg.norm(full_vector)
-
-    res_vector = np.array([resolution['lat_res'], resolution['lng_res']])
-
-    unit_vector = np.multiply(np.divide(full_vector, module), res_vector)
-
-    current_point = np.copy(start_point)
-
-    end = int(round(Decimal(module) / Decimal(res_vector[0])))
-
-    point_list = []
-
-    point_list.append((current_point[0], current_point[1]))
-
-    for _ in range(end):
-        current_point = np.add(current_point, unit_vector)
-        point_list.append((current_point[0], current_point[1]))
-
-    return point_list
-*/
